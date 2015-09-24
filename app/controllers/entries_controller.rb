@@ -22,6 +22,10 @@ class EntriesController < ApplicationController
     @entry = Entry.find_by(id: params[:id])
   end
 
+  def edit
+    @entry = Entry.find_by(id: params[:id])
+  end
+
   private
 
   def entry_params

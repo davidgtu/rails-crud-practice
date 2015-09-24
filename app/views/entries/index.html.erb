@@ -1,7 +1,7 @@
 <h1>Blog On Rails</h1>
 
 <% @entries.each do |entry| %>
-  <li><h3><%= entry.name %></h3></li>
+  <li><h3><%= link_to entry.name, entry %></h3></li>
   <%= entry.content %><br>
   <% entry.tags.each do |tag| %><br>
     <%= link_to tag.body, tag %>

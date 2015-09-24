@@ -1,9 +1,11 @@
-<h1>Blog On Railzzzzz</h1>
+<h1>Blog On Rails</h1>
 
 <% @entries.each do |entry| %>
   <li><h3><%= entry.name %></h3></li>
-  <%= entry.content %>
-  <%= entry.entry_tags %>
+  <%= entry.content %><br>
+  <% entry.tags.each do |tag| %><br>
+    <%= link_to tag.body, tag %>
+  <% end %>
 <% end %><br><br>
 
 <%= link_to "Add a new entry!", new_entry_path %>

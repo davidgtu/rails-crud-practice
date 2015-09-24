@@ -3,6 +3,10 @@
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   <%= f.label :content %><br>
-  <%= f.text_field :content %><br><br>
+  <%= f.text_field :content %>
+    <%= fields_for @tag do |ff|%><br>
+      <%=ff.label :tags %><br>
+      <%=ff.text_field :body%><br>
+    <%end%><br>
   <%= f.submit "Create new Entry" %>
 <% end %>

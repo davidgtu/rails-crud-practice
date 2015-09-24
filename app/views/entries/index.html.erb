@@ -3,6 +3,9 @@
 <% @entries.each do |entry| %>
   <li><h3><%= entry.name %></h3></li>
   <%= entry.content %>
+  <% @tags.each do |tag| %><br>
+    <%= tag.body %>
+  <% end %>
 <% end %><br><br>
 
 <%= link_to "Add a new entry!", new_entry_path %>

@@ -1,5 +1,8 @@
-<h1>Hi</h1>
+<h1>Blog On Railzzzzz</h1>
 
 <% @entries.each do |entry| %>
-  <% entry.title %>
-<% end %>
+  <li><h3><%= entry.name %></h3></li>
+  <%= entry.content %>
+<% end %><br><br>
+
+<%= link_to "Add a new entry!", new_entry_path %>

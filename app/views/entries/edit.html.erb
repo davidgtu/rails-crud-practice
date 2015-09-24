@@ -1,2 +1,8 @@
 <h1>Edit form</h1>
-<%=  %>
+<%= form_for @entry do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :content %> <br>
+  <%= f.text_field :content %> <br>
+  <%= f.submit "Save changes" %>
+<% end %>

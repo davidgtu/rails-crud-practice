@@ -26,6 +26,15 @@ class EntriesController < ApplicationController
     @entry = Entry.find_by(id: params[:id])
   end
 
+  def update
+    @entry = Entry.find_by(id: params[:id])
+    if @entry.update_attributes(entry_params)
+      redirect_to @entry
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def entry_params

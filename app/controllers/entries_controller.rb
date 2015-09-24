@@ -35,6 +35,12 @@ class EntriesController < ApplicationController
     end
   end
 
+  def destroy
+    @entry = Entry.find(params[:id])
+    @entry.destroy
+    redirect_to action: 'index'
+  end
+
   private
 
   def entry_params

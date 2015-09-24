@@ -11,7 +11,7 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
-    @tag = Tag.new(tag_params)
+    @tag = @entry.tags.new(tag_params)
     if @entry.save && @tag.save
       redirect_to action: "index"
     else
